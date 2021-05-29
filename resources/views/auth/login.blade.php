@@ -170,6 +170,11 @@
 										<div class="card-body mt-2 mb-2">
 											<img src="assets/img/brand/logo.png" class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo">
 											<div class="clearfix"></div>
+											<!-- Session Status -->
+											<x-auth-session-status class="mb-4" :status="session('status')" />
+
+											<!-- Validation Errors -->
+											<x-auth-validation-errors class="mb-4" :errors="$errors" />
 											<form method="POST" action="{{ route('login') }}">
                                                 @csrf
 												<h5 class="text-left mb-2">Iniciar sesión en su cuenta</h5>

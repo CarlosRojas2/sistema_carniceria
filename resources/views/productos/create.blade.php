@@ -1,47 +1,67 @@
 @extends('includes/base')
 @section('content')
-<div class="app-main__outer">
-    <div class="app-main__inner">
-        <div class="app-page-title">
-            <div class="page-title-wrapper">
-                <div class="page-title-heading">
-                    <div class="page-title-icon">
-                        <i class="lnr-picture text-danger"></i>
+
+    <div class="main-content side-content pt-0">
+        <div class="container-fluid">
+            <div class="inner-body">
+
+
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div>
+                        <h2 class="main-content-title tx-24 mg-b-5">Bienvenido al Dashboard</h2>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Proyecto de prácticas</li>
+                        </ol>
                     </div>
-                    <div>Nuevo producto
-                        <div class="page-title-subheading">Agregar nuevo producto.</div>
+                    <div class="d-flex">
+                        <div class="justify-content-center">
+                            <button type="button" class="btn btn-primary my-2 btn-icon-text">
+                            <i class="fe fe-download-cloud mr-2"></i> Nuevo Producto
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="page-title-actions">
-                    <a type="button" href="{{route('productos.index')}}" data-toggle="tooltip" title="ver productos" data-placement="bottom"
-                        class="mb-2 mr-2 btn-hover-shine btn btn-success">Ver productos 
-                        <i class="fa fa-plus-square"></i>
-                    </a>
-                </div>     
-            </div>
-        </div>        
-        <div class="tab-content">
-            <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                <div class="main-card mb-3 card">
-                    <div class="card-body">
-                        <form id="productos" class="col-md-10 mx-auto" method="POST" action="{{route('productos.store')}}">
-                            @csrf
-                            @include('productos/_form')
-                            
-                            <div class="form-group" align="center">
-                                <button type="submit" class="mb-2 mr-2 btn-hover-shine btn btn-alternate" value="registrar">Registrar</button>
-                                <a type="submit" href="{{route('productos.index')}}"  class="mb-2 mr-2 btn-hover-shine btn btn-light" name="cancelar" value="Cancelar">Cancelar</a>
+                <!-- End Page Header -->
+
+                <!--Row-->
+                <div class="row row-sm">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div>
+                                    <h6 class="main-content-label mb-1">Registros de productos</h6>
+                                    <p class="text-muted card-sub-title">Registrar nuevo producto.</p>
+                                </div>
+                                <div class="row row-sm">
+                                    <div class="col-lg">
+                                        <input class="form-control" placeholder="Input box" type="text">
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <input class="form-control" placeholder="Input box (readonly)" readonly type="text">
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <input class="form-control" disabled placeholder="Input box (disabled)" type="text">
+                                    </div>
+                                </div>
+                                <div class="row row-sm mg-t-20">
+                                    <div class="col-lg">
+                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <textarea class="form-control" placeholder="Textarea (readonly)" readonly rows="3"></textarea>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <textarea class="form-control" disabled placeholder="Texarea (disabled)" rows="3"></textarea>
+                                    </div>
+                                </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
+                <!-- Row end -->
             </div>
         </div>
     </div>
-@endsection
-@section('scripts')
-
-{{-- <script type="text/javascript" src="{{asset('js/producto.js')}}"></script> --}}
-
-    
 @endsection

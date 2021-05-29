@@ -9,40 +9,45 @@
 		<meta name="keywords" content="admin laravel template, template laravel admin, laravel css template, best admin template for laravel, laravel blade admin template, template admin laravel, laravel admin template bootstrap 4, laravel bootstrap 4 admin template, laravel admin bootstrap 4, admin template bootstrap 4 laravel, bootstrap 4 laravel admin template, bootstrap 4 admin template laravel, laravel bootstrap 4 template, bootstrap blade template, laravel bootstrap admin template">
 
         <!-- Favicon -->
-		<link rel="icon" href="assets/img/brand/favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="{{asset('assets/img/brand/favicon.ico')}}" type="image/x-icon"/>
 
 		<!-- Title -->
 		<title>{{config('app.name', 'laravel')}}</title>
 
 		<!-- Bootstrap css-->
-		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
 
 		<!-- Icons css-->
-		<link href="assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
-		<link href="assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
-		<link href="assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
+		<link href="{{asset('assets/plugins/web-fonts/icons.css')}}" rel="stylesheet"/>
+		<link href="{{asset('assets/plugins/web-fonts/font-awesome/font-awesome.min.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/plugins/web-fonts/plugin.css')}}" rel="stylesheet"/>
 
 		<!-- Style css-->
-		<link href="assets/css/style/style.css" rel="stylesheet">
-		<link href="assets/css/skins.css" rel="stylesheet">
-		<link href="assets/css/dark-style.css" rel="stylesheet">
-		<link href="assets/css/colors/default.css" rel="stylesheet">
+		<link href="{{asset('assets/css/style/style.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/skins.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/dark-style.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/colors/default.css')}}" rel="stylesheet">
 
 		<!-- Color css-->
-		<link id="theme" rel="stylesheet" type="text/css" media="all" href="assets/css/colors/color.css">
+		<link id="theme" rel="stylesheet" type="text/css" media="all" href="{{asset('assets/css/colors/color.css')}}">
 
 		<!-- Select2 css-->
-        <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+        <link href="{{asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
+
+		<!-- Internal DataTables css-->
+		<link href="{{asset('assets/plugins/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
+		<link href="{{asset('assets/plugins/datatable/responsivebootstrap4.min.css')}}" rel="stylesheet" />
+		<link href="{{asset('assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css')}}" rel="stylesheet" />
 		
-				<!-- Mutipleselect css-->
-		<link rel="stylesheet" href="assets/plugins/multipleselect/multiple-select.css">
+		<!-- Mutipleselect css-->
+		<link rel="stylesheet" href="{{asset('assets/plugins/multipleselect/multiple-select.css')}}">
 		
 		<!-- Sidemenu css-->
-		<link href="assets/css/sidemenu/sidemenu.css" rel="stylesheet">
+		<link href="{{asset('assets/css/sidemenu/sidemenu.css')}}" rel="stylesheet">
 
 		<!-- Switcher css-->
-		<link href="assets/switcher/css/switcher.css" rel="stylesheet">
-		<link href="assets/switcher/demo.css" rel="stylesheet">
+		<link href="{{asset('assets/switcher/css/switcher.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/switcher/demo.css')}}" rel="stylesheet">
 	</head>
 
 	<body class="main-body leftmenu light-horizontal light-theme light-leftmenu color-header">
@@ -81,48 +86,62 @@
 		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
 
 		<!-- Jquery js-->
-		<script src="assets/plugins/jquery/jquery.min.js"></script>
+		<script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
 
 		<!-- Bootstrap js-->
-		<script src="assets/plugins/bootstrap/js/popper.min.js"></script>
-        <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="{{asset('assets/plugins/bootstrap/js/popper.min.js')}}"></script>
+        <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
         
 		<!-- Select2 js-->
-		<script src="assets/plugins/select2/js/select2.min.js"></script>
+		<script src="{{asset('assets/plugins/select2/js/select2.min.js')}}"></script>
 
 		<!-- Perfect-scrollbar js -->
-		<script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="{{asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 
 		<!-- Sidemenu js -->
-		<script src="assets/plugins/sidemenu/sidemenu.js"></script>
+		<script src="{{asset('assets/plugins/sidemenu/sidemenu.js')}}"></script>
 
 		<!-- Sidebar js -->
-		<script src="assets/plugins/sidebar/sidebar.js"></script>
+		<script src="{{asset('assets/plugins/sidebar/sidebar.js')}}"></script>
+
+		<!-- Internal Data Table js -->
+		<script src="{{asset('assets/plugins/datatable/jquery.dataTables.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/dataTables.bootstrap4.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/dataTables.responsive.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/fileexport/dataTables.buttons.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/fileexport/buttons.bootstrap4.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/fileexport/jszip.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/fileexport/pdfmake.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/fileexport/vfs_fonts.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/fileexport/buttons.html5.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/fileexport/buttons.print.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/datatable/fileexport/buttons.colVis.min.js')}}"></script>
+		<script src="{{asset('assets/js/table-data.js')}}"></script>
 		
-		        <!-- Internal Chart.Bundle js-->
-		<script src="assets/plugins/chart.js/Chart.bundle.min.js"></script>
+		<!-- Internal Chart.Bundle js-->
+		<script src="{{asset('assets/plugins/chart.js')}}/Chart.bundle.min.js')}}"></script>
 
 		<!-- Peity js-->
-        <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+        <script src="{{asset('assets/plugins/peity/jquery.peity.min.js')}}"></script>
 
 		<!-- Internal Morris js -->
-		<script src="assets/plugins/raphael/raphael.min.js"></script>
-		<script src="assets/plugins/morris.js/morris.min.js"></script>
+		<script src="{{asset('assets/plugins/raphael/raphael.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/morris.js')}}/morris.min.js')}}"></script>
 
 		<!-- Circle Progress js-->
-		<script src="assets/js/circle-progress.min.js"></script>
-		<script src="assets/js/chart-circle.js"></script>
+		<script src="{{asset('assets/js/circle-progress.min.js')}}"></script>
+		<script src="{{asset('assets/js/chart-circle.js')}}"></script>
 
 		<!-- Internal Dashboard js-->
-        <script src="assets/js/index.js"></script>
+        <script src="{{asset('assets/js/index.js')}}"></script>
 		
 		<!-- Sticky js -->
-		<script src="assets/js/sticky.js"></script>
+		<script src="{{asset('assets/js/sticky.js')}}"></script>
 
 		<!-- Custom js -->
-		<script src="assets/js/custom.js"></script>
+		<script src="{{asset('assets/js/custom.js')}}"></script>
 
 		<!-- Switcher js -->
-		<script src="assets/switcher/js/switcher.js"></script>
+		<script src="{{asset('assets/switcher/js/switcher.js')}}"></script>
 	</body>
 </html>

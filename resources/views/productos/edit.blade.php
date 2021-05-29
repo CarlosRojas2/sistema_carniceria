@@ -67,7 +67,6 @@
                                                     <option value="{{$item->id}}" @if ($producto->proveedor_id == $item->id)
                                                         selected
                                                     @endif>{{$item->nombre}}</option>
-                                                    
                                                 @endforeach
                                             </optgroup>
                                         </select>
