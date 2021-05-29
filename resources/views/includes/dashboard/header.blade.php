@@ -15,7 +15,7 @@
             
             <div class="dropdown main-profile-menu">
                 <a class="d-flex" href="#">
-                    <span class="main-img-user" ><img alt="avatar" src="assets/img/users/1.jpg"></span>
+                    <span class="main-img-user" ><img alt="avatar" src="{{asset('assets/img/users/1.jpg')}}"></span>
                 </a>
                 <div class="dropdown-menu">
                     <div class="header-navheading">

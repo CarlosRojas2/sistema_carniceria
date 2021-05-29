@@ -26,7 +26,6 @@ class ProductoController extends Controller
         // $producto = new Producto();
         // $producto->codigo = $producto->id;
         // $producto->nombre = $request->nombre;
-        // $producto->precio_venta = $request->precio_venta;
         // $producto->categoria_id = $request->categoria_id;
         // $producto->proveedor_id = $request->proveedor_id;
 
@@ -56,7 +55,7 @@ class ProductoController extends Controller
     public function destroy(Producto $producto)
     {
         $producto->delete();
-        return redirect()->route('productos.index');
+        return redirect()->route('productos.index')->with('eliminar','ok');
     }
     // public function codigo(){
     //     $productos = Producto::get();

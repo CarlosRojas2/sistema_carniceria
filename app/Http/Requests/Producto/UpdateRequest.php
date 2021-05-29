@@ -25,7 +25,6 @@ class UpdateRequest extends FormRequest
     {
         return [
             'nombre'=>'string|required|unique:productos,nombre,'.$this->route('producto')->id.'|max:255',
-            'precio_venta'=>'required',
             'categoria_id'=>'integer|required|exists:App\Models\Categoria,id',
             'proveedor_id'=>'integer|required|exists:App\Models\Proveedor,id'
 
@@ -38,8 +37,6 @@ class UpdateRequest extends FormRequest
             'nombre.required'=>'El campo es requerido.',
             'nombre.unique'=>'El producto ya esta registrado.',
             'nombre.max'=>'Solo se permite 255 caracteres.',
-
-            'precio_venta.required'=>'El campo es requerido.',
 
             'categoria_id.integer'=>'El valor tiene que ser entero.',
             'categoria_id.required'=>'El campo es requerido.',

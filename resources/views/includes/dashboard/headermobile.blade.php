@@ -42,31 +42,31 @@
                 </a>
                 <div class="dropdown-menu">
                     <a href="#" class="dropdown-item d-flex ">
-                        <span class="avatar  mr-3 align-self-center bg-transparent"><img src="assets/img/flags/french_flag.jpg" alt="img"></span>
+                        <span class="avatar  mr-3 align-self-center bg-transparent"><img src="{{asset('assets/img/flags/french_flag.jpg')}}" alt="img"></span>
                         <div class="d-flex">
                             <span class="mt-2">French</span>
                         </div>
                     </a>
                     <a href="#" class="dropdown-item d-flex">
-                        <span class="avatar  mr-3 align-self-center bg-transparent"><img src="assets/img/flags/germany_flag.jpg" alt="img"></span>
+                        <span class="avatar  mr-3 align-self-center bg-transparent"><img src="{{asset('assets/img/flags/germany_flag.jpg')}}" alt="img"></span>
                         <div class="d-flex">
                             <span class="mt-2">Germany</span>
                         </div>
                     </a>
                     <a href="#" class="dropdown-item d-flex">
-                        <span class="avatar mr-3 align-self-center bg-transparent"><img src="assets/img/flags/italy_flag.jpg" alt="img"></span>
+                        <span class="avatar mr-3 align-self-center bg-transparent"><img src="{{asset('assets/img/flags/italy_flag.jpg')}}" alt="img"></span>
                         <div class="d-flex">
                             <span class="mt-2">Italy</span>
                         </div>
                     </a>
                     <a href="#" class="dropdown-item d-flex">
-                        <span class="avatar mr-3 align-self-center bg-transparent"><img src="assets/img/flags/russia_flag.jpg" alt="img"></span>
+                        <span class="avatar mr-3 align-self-center bg-transparent"><img src="{{asset('assets/img/flags/russia_flag.jpg')}}" alt="img"></span>
                         <div class="d-flex">
                             <span class="mt-2">Russia</span>
                         </div>
                     </a>
                     <a href="#" class="dropdown-item d-flex">
-                        <span class="avatar  mr-3 align-self-center bg-transparent"><img src="assets/img/flags/spain_flag.jpg" alt="img"></span>
+                        <span class="avatar  mr-3 align-self-center bg-transparent"><img src="{{asset('assets/img/flags/spain_flag.jpg')}}" alt="img"></span>
                         <div class="d-flex">
                             <span class="mt-2">spain</span>
                         </div>
@@ -90,19 +90,19 @@
                     </div>
                     <div class="main-notification-list">
                         <div class="media new">
-                            <div class="main-img-user online"><img alt="avatar" src="assets/img/users/5.jpg"></div>
+                            <div class="main-img-user online"><img alt="avatar" src="{{asset('assets/img/users/5.jpg')}}"></div>
                             <div class="media-body">
                                 <p>Congratulate <strong>Olivia James</strong> for New template start</p><span>Oct 15 12:32pm</span>
                             </div>
                         </div>
                         <div class="media">
-                            <div class="main-img-user"><img alt="avatar" src="assets/img/users/2.jpg"></div>
+                            <div class="main-img-user"><img alt="avatar" src="{{asset('assets/img/users/2.jpg')}}"></div>
                             <div class="media-body">
                                 <p><strong>Joshua Gray</strong> New Message Received</p><span>Oct 13 02:56am</span>
                             </div>
                         </div>
                         <div class="media">
-                            <div class="main-img-user online"><img alt="avatar" src="assets/img/users/3.jpg"></div>
+                            <div class="main-img-user online"><img alt="avatar" src="{{asset('assets/img/users/3.jpg')}}"></div>
                             <div class="media-body">
                                 <p><strong>Elizabeth Lewis</strong> added new schedule realease</p><span>Oct 12 10:40pm</span>
                             </div>
@@ -121,7 +121,7 @@
             </div>
             <div class="dropdown main-profile-menu">
                 <a class="d-flex" href="#">
-                    <span class="main-img-user" ><img alt="avatar" src="assets/img/users/1.jpg"></span>
+                    <span class="main-img-user" ><img alt="avatar" src="{{asset('assets/img/users/1.jpg')}}"></span>
                 </a>
                 <div class="dropdown-menu">
                     <div class="header-navheading">

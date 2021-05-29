@@ -16,10 +16,10 @@
                         </ol>
                     </div>
                     <div class="d-flex">
-                        <div class="justify-content-center">
-                            <button type="button" class="btn btn-primary my-2 btn-icon-text">
+                        <div class="justify-content-center text-white">
+                            <a type="button" href="{{route('productos.create')}}" class="btn btn-primary my-2 btn-icon-text">
                             <i class="fe fe-download-cloud mr-2"></i> Nuevo Producto
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @if (!empty($prdoductos))
+                                            @if (!empty($productos))
                                                 @foreach ($productos as $item)
                                                     <tr>
                                                         <td>{{$item->id}}</td>
@@ -58,15 +58,24 @@
                                                         <td>{{$item->proveedor->nombre}}</td>
                                                         <td>{{$item->estado}}</td>
                                                         <td>
-                                                            <a href="#" class="btn btn-sm btn-primary">
-                                                                <i class="fe fe-search"></i>
-                                                            </a>
-                                                            <a href="#" class="btn btn-sm btn-info">
-                                                                <i class="fe fe-edit-2"></i>
-                                                            </a>
-                                                            <a href="#" class="btn btn-sm btn-danger">
-                                                                <i class="fe fe-trash"></i>
-                                                            </a>
+
+                                                            <form action="{{route('productos.destroy', $item)}}" class="eliminar-producto">
+                                                                @csrf
+                                                                @method('DELETE')
+
+                                                                <a href="#" class="btn btn-sm btn-primary">
+                                                                    <i class="fe fe-search"></i>
+                                                                </a>
+                                                                <a href="{{route('productos.edit', $item->id)}}" class="btn btn-sm btn-info">
+                                                                    <i class="fe fe-edit-2"></i>
+                                                                </a>
+                                                                <button tipe="submit" class="btn btn-sm btn-danger">
+                                                                    <i class="fe fe-trash"></i>
+                                                                </button>
+
+                                                            </form>
+
+                                                            
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -82,4 +91,35 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('eliminar')=='ok')
+    <script>
+        swal("Deleted!", "Your imaginary file has been deleted.", "success")
+    </script>
+@endif
+
+<script>
+    $('.eliminar-producto').submit(function(e){
+        e.preventDefault();
+        swal.fire({
+		  title: "Are you sure?",
+		  text: "Your will not be able to recover this imaginary file!",
+		  type: "warning",
+		  showCancelButton: true,
+		  confirmButtonClass: "btn btn-danger",
+		  confirmButtonText: "Yes, delete it!",
+		  closeOnConfirm: false
+		}).then((result)=>{
+            if(result.value){
+                // this.submit();
+                swal.fire("Deleted!", "Your imaginary file has been deleted.", "success")
+            }
+        })
+        
+    })
+</script>
+    
 @endsection

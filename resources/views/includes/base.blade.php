@@ -48,6 +48,10 @@
 		<!-- Switcher css-->
 		<link href="{{asset('assets/switcher/css/switcher.css')}}" rel="stylesheet">
 		<link href="{{asset('assets/switcher/demo.css')}}" rel="stylesheet">
+
+		<!-- Internal Sweet-Alert css-->
+		{{-- <link href="{{asset('assets/plugins/sweet-alert/sweetalert.css')}}" rel="stylesheet"> --}}
+
 	</head>
 
 	<body class="main-body leftmenu light-horizontal light-theme light-leftmenu color-header">
@@ -104,6 +108,9 @@
 		<!-- Sidebar js -->
 		<script src="{{asset('assets/plugins/sidebar/sidebar.js')}}"></script>
 
+		<!-- Internal Select2 js-->
+        <script src="{{asset('assets/js/select2.js')}}"></script>
+
 		<!-- Internal Data Table js -->
 		<script src="{{asset('assets/plugins/datatable/jquery.dataTables.min.js')}}"></script>
 		<script src="{{asset('assets/plugins/datatable/dataTables.bootstrap4.min.js')}}"></script>
@@ -118,22 +125,26 @@
 		<script src="{{asset('assets/plugins/datatable/fileexport/buttons.colVis.min.js')}}"></script>
 		<script src="{{asset('assets/js/table-data.js')}}"></script>
 		
-		<!-- Internal Chart.Bundle js-->
-		<script src="{{asset('assets/plugins/chart.js')}}/Chart.bundle.min.js')}}"></script>
+		
 
 		<!-- Peity js-->
         <script src="{{asset('assets/plugins/peity/jquery.peity.min.js')}}"></script>
 
 		<!-- Internal Morris js -->
 		<script src="{{asset('assets/plugins/raphael/raphael.min.js')}}"></script>
-		<script src="{{asset('assets/plugins/morris.js')}}/morris.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/morris.js/morris.min.js')}}"></script>
 
 		<!-- Circle Progress js-->
 		<script src="{{asset('assets/js/circle-progress.min.js')}}"></script>
-		<script src="{{asset('assets/js/chart-circle.js')}}"></script>
 
 		<!-- Internal Dashboard js-->
-        <script src="{{asset('assets/js/index.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/index.js')}}"></script> --}}
+
+		<!-- Internal Ion-rangeslider js-->
+        <script src="{{asset('assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
+
+		<!-- Internal Form-elements js-->
+		{{-- <script src="{{asset('assets/js/form-elements.js')}}"></script> --}}
 		
 		<!-- Sticky js -->
 		<script src="{{asset('assets/js/sticky.js')}}"></script>
@@ -141,7 +152,12 @@
 		<!-- Custom js -->
 		<script src="{{asset('assets/js/custom.js')}}"></script>
 
+		<!-- Internal Sweet-Alert js-->
+		{{-- <script src="{{asset('assets/plugins/sweet-alert/sweetalert.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/sweet-alert/jquery.sweet-alert.js')}}"></script> --}}
+
 		<!-- Switcher js -->
 		<script src="{{asset('assets/switcher/js/switcher.js')}}"></script>
+		@yield('scripts')
 	</body>
 </html>

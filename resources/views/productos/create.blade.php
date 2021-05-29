@@ -16,10 +16,10 @@
                         </ol>
                     </div>
                     <div class="d-flex">
-                        <div class="justify-content-center">
-                            <button type="button" class="btn btn-primary my-2 btn-icon-text">
-                            <i class="fe fe-download-cloud mr-2"></i> Nuevo Producto
-                            </button>
+                        <div class="justify-content-center text-white">
+                            <a type="button" href="{{route('productos.index')}}" class="btn btn-primary my-2 btn-icon-text">
+                            <i class="fe fe-download-cloud mr-2"></i> Ver Productos
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -34,28 +34,46 @@
                                     <h6 class="main-content-label mb-1">Registros de productos</h6>
                                     <p class="text-muted card-sub-title">Registrar nuevo producto.</p>
                                 </div>
-                                <div class="row row-sm">
-                                    <div class="col-lg">
-                                        <input class="form-control" placeholder="Input box" type="text">
+                                <form id="productos" method="POST" action="{{route('productos.store')}}">
+                                    @csrf
+                                    <div class="row row-sm">
+                                        <div class="col-lg">
+                                            <p class="mg-b-10">Descripción*</p>
+                                            <input id="nombre" name="nombre" class="form-control" placeholder="...." type="text">
+                                        </div>
                                     </div>
-                                    <div class="col-lg mg-t-10 mg-lg-t-0">
-                                        <input class="form-control" placeholder="Input box (readonly)" readonly type="text">
+                                    <div class="row row-sm mg-t-20">
+                                        <div class="col-lg">
+                                            <p class="mg-b-10">Categoría*</p>
+                                            <div class="form-group">
+                                                <select name="categoria_id" id="categoria_id" class="form-control select-lg select2">
+                                                    <option value="">Large Select</option>
+                                                    @foreach ($categorias as $item)
+                                                    <option value="{{$item->id}}">{{$item->nombre}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg">
+                                            <p class="mg-b-10">Proveedor*</p>
+                                            <div class="form-group">
+                                                <select name="proveedor_id" id="proveedor_id" class="form-control select-lg select2">
+                                                    <option value="">Large Select</option>
+                                                    @foreach ($proveedors as $item)
+                                                    <option value="{{$item->id}}">{{$item->nombre}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-lg mg-t-10 mg-lg-t-0">
-                                        <input class="form-control" disabled placeholder="Input box (disabled)" type="text">
+                                    <div class="form-group row justify-content-end mb-0" align="center">
+                                        <div class="col-md-12 pl-md-6 text-white">
+                                            <button type="submit" class="btn ripple btn-primary pd-x-30 mg-r-10" value="registrar">Registrar</button>
+                                            <a type="button" href="{{route('productos.index')}}" class="btn ripple btn-secondary pd-x-30">Cancelar</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row row-sm mg-t-20">
-                                    <div class="col-lg">
-                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
-                                    </div>
-                                    <div class="col-lg mg-t-10 mg-lg-t-0">
-                                        <textarea class="form-control" placeholder="Textarea (readonly)" readonly rows="3"></textarea>
-                                    </div>
-                                    <div class="col-lg mg-t-10 mg-lg-t-0">
-                                        <textarea class="form-control" disabled placeholder="Texarea (disabled)" rows="3"></textarea>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
