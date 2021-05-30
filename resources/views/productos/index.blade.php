@@ -59,9 +59,9 @@
                                                         <td>{{$item->estado}}</td>
                                                         <td>
 
-                                                            <form action="{{route('productos.destroy', $item)}}" class="eliminar-producto">
+                                                            <form action="{{route('productos.destroy', $item)}}" class="eliminar-producto" method="POST">
                                                                 @csrf
-                                                                @method('DELETE')
+                                                                @method('delete')
 
                                                                 <a href="#" class="btn btn-sm btn-primary">
                                                                     <i class="fe fe-search"></i>
@@ -69,6 +69,7 @@
                                                                 <a href="{{route('productos.edit', $item->id)}}" class="btn btn-sm btn-info">
                                                                     <i class="fe fe-edit-2"></i>
                                                                 </a>
+
                                                                 <button tipe="submit" class="btn btn-sm btn-danger">
                                                                     <i class="fe fe-trash"></i>
                                                                 </button>
@@ -97,7 +98,7 @@
 
 @if (session('eliminar')=='ok')
     <script>
-        swal("Deleted!", "Your imaginary file has been deleted.", "success")
+        swal.fire("¡Eliminado!", "El producto se eliminó con éxito.", "success")
     </script>
 @endif
 
@@ -105,17 +106,18 @@
     $('.eliminar-producto').submit(function(e){
         e.preventDefault();
         swal.fire({
-		  title: "Are you sure?",
-		  text: "Your will not be able to recover this imaginary file!",
+		  title: "¿Está seguro?",
+		  text: "No podrá recuperar éste archivo!",
 		  type: "warning",
 		  showCancelButton: true,
 		  confirmButtonClass: "btn btn-danger",
-		  confirmButtonText: "Yes, delete it!",
+		  confirmButtonText: "¡Sí, Bórralo!",
+		  cancelButtonText: "Cancelar",
 		  closeOnConfirm: false
 		}).then((result)=>{
             if(result.value){
-                // this.submit();
-                swal.fire("Deleted!", "Your imaginary file has been deleted.", "success")
+                this.submit();
+                // swal.fire("Deleted!", "Your imaginary file has been deleted.", "success")
             }
         })
         
