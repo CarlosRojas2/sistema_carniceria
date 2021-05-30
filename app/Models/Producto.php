@@ -11,6 +11,7 @@ class Producto extends Model
         'codigo',
         'nombre',
         'stock',
+        'precio_venta',
         'estado',
         'categoria_id',
         'proveedor_id'

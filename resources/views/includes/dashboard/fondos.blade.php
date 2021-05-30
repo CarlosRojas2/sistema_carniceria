@@ -16,25 +16,25 @@
                     <div class="swichermainleft">
                     <h4>Navigation Style</h4>
                         <div class="p-3">
-                            <a href="index.html" class="btn btn-primary btn-block mt-0">LTR VERSION</a>
+                            <a href="/index.html" class="btn btn-primary btn-block mt-0">LTR VERSION</a>
                             <a href="https://laravel.spruko.com/spruha/rtl/index" class="btn btn-success btn-block">RTL VERSION</a>
                         </div>
                     </div>
                     <div class="swichermainleft">
                     <h4>Layout Style</h4>
                         <div class="p-3">
-                            <a href="index.html" class="btn btn-primary btn-block mt-0">Left Menu</a>
-                            <a href="horizontal.html" class="btn btn-success btn-block">Horizontal Menu</a>
+                            <a href="/index.html" class="btn btn-primary btn-block mt-0">Left Menu</a>
+                            <a href="/horizontal.html" class="btn btn-success btn-block">Horizontal Menu</a>
                         </div>
                     </div>
                     <div class="swichermainleft">
                         <h4 class="font-bold text-sm mr-3">Default Theme Switcher</h4>
                         <div class="swichermainleft my-4">
-                            <a class="wscolorcode red-btn color blackborder color1" href="#" data-theme="{{asset('assets/css/colors/color1.css')}}"></a>
-                            <a class="wscolorcode purple-btn color blackborder color2" href="#" data-theme="{{asset('assets/css/colors/color2.css')}}"></a>
-                            <a class="wscolorcode green-btn color blackborder color3" href="#" data-theme="{{asset('assets/css/colors/color3.css')}}"></a>
-                            <a class="wscolorcode pink-btn color blackborder color4" href="#" data-theme="{{asset('assets/css/colors/color4.css')}}"></a>
-                            <a class="wscolorcode orange-btn color blackborder color5" href="#" data-theme="{{asset('assets/css/colors/color5.css')}}"></a>
+                            <a class="wscolorcode red-btn color blackborder color1" href="#" data-theme="/assets/css/colors/color1.css"></a>
+                            <a class="wscolorcode purple-btn color blackborder color2" href="#" data-theme="/assets/css/colors/color2.css"></a>
+                            <a class="wscolorcode green-btn color blackborder color3" href="#" data-theme="/assets/css/colors/color3.css"></a>
+                            <a class="wscolorcode pink-btn color blackborder color4" href="#" data-theme="/assets/css/colors/color4.css"></a>
+                            <a class="wscolorcode orange-btn color blackborder color5" href="#" data-theme="/assets/css/colors/color5.css"></a>
                         </div>
                     </div>
                     <div class="swichermainleft">

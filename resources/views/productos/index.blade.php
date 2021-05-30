@@ -16,10 +16,10 @@
                         </ol>
                     </div>
                     <div class="d-flex">
-                        <div class="justify-content-center text-white">
-                            <a type="button" href="{{route('productos.create')}}" class="btn btn-primary my-2 btn-icon-text">
+                        <div class="justify-content-center">
+                            <button type="button" class="btn btn-primary my-2 btn-icon-text">
                             <i class="fe fe-download-cloud mr-2"></i> Nuevo Producto
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -27,61 +27,34 @@
 
                 <!--Row-->
                 <div class="row row-sm">
-                    <div class="col-lg-12">
-                        <div class="card custom-card overflow-hidden">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card custom-card">
                             <div class="card-body">
                                 <div>
-                                    <h6 class="main-content-label mb-1">Listado de productos</h6>
-                                    <p class="text-muted card-sub-title">Eres libre de exportar los datos:</p>
+                                    <h6 class="main-content-label mb-1">Registros de productos</h6>
+                                    <p class="text-muted card-sub-title">Registrar nuevo producto.</p>
                                 </div>
-                                <div class="table-responsive">
-                                    <table id="exportexample" class="table table-bordered border-t0 key-buttons text-nowrap w-100" >
-                                        <thead>
-                                            <tr>
-                                                <th>Cod</th>
-                                                <th>Nombre</th>
-                                                <th>Stock</th>
-                                                <th>Categoría</th>
-                                                <th>Proveedor</th>
-                                                <th>Estado</th>
-                                                <th>Opciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @if (!empty($productos))
-                                                @foreach ($productos as $item)
-                                                    <tr>
-                                                        <td>{{$item->id}}</td>
-                                                        <td><a href="{{route('productos.show', $item->id)}}">{{$item->nombre}}</a></td>
-                                                        <td>{{$item->stock}}</td>
-                                                        <td>{{$item->categoria->nombre}}</td>
-                                                        <td>{{$item->proveedor->nombre}}</td>
-                                                        <td>{{$item->estado}}</td>
-                                                        <td>
-
-                                                            <form action="{{route('productos.destroy', $item)}}" class="eliminar-producto">
-                                                                @csrf
-                                                                @method('DELETE')
-
-                                                                <a href="#" class="btn btn-sm btn-primary">
-                                                                    <i class="fe fe-search"></i>
-                                                                </a>
-                                                                <a href="{{route('productos.edit', $item->id)}}" class="btn btn-sm btn-info">
-                                                                    <i class="fe fe-edit-2"></i>
-                                                                </a>
-                                                                <button tipe="submit" class="btn btn-sm btn-danger">
-                                                                    <i class="fe fe-trash"></i>
-                                                                </button>
-
-                                                            </form>
-
-                                                            
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            @endif
-                                        </tbody>
-                                    </table>
+                                <div class="row row-sm">
+                                    <div class="col-lg">
+                                        <input class="form-control" placeholder="Input box" type="text">
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <input class="form-control" placeholder="Input box (readonly)" readonly type="text">
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <input class="form-control" disabled placeholder="Input box (disabled)" type="text">
+                                    </div>
+                                </div>
+                                <div class="row row-sm mg-t-20">
+                                    <div class="col-lg">
+                                        <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <textarea class="form-control" placeholder="Textarea (readonly)" readonly rows="3"></textarea>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <textarea class="form-control" disabled placeholder="Texarea (disabled)" rows="3"></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -91,35 +64,4 @@
             </div>
         </div>
     </div>
-@endsection
-@section('scripts')
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-@if (session('eliminar')=='ok')
-    <script>
-        swal("Deleted!", "Your imaginary file has been deleted.", "success")
-    </script>
-@endif
-
-<script>
-    $('.eliminar-producto').submit(function(e){
-        e.preventDefault();
-        swal.fire({
-		  title: "Are you sure?",
-		  text: "Your will not be able to recover this imaginary file!",
-		  type: "warning",
-		  showCancelButton: true,
-		  confirmButtonClass: "btn btn-danger",
-		  confirmButtonText: "Yes, delete it!",
-		  closeOnConfirm: false
-		}).then((result)=>{
-            if(result.value){
-                // this.submit();
-                swal.fire("Deleted!", "Your imaginary file has been deleted.", "success")
-            }
-        })
-        
-    })
-</script>
-    
 @endsection

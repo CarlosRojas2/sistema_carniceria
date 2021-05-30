@@ -18,6 +18,7 @@ class CreateProductosTable extends Migration
             $table->string('codigo')->unique()->nullable();
             $table->string('nombre')->unique();
             $table->integer('stock')->default(0);
+            $table->decimal('precio_venta', 12, 2);
             $table->enum('estado',['ACTIVO', 'INACTIVO'])->default('ACTIVO');
             $table->unsignedBigInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('categorias');
