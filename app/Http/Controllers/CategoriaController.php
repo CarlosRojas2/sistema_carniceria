@@ -6,6 +6,7 @@ use App\Http\Requests\Categoria\StoreRequest;
 use App\Http\Requests\Categoria\UpdateRequest;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Laracasts\Flash\Flash;
 
 class CategoriaController extends Controller
 {
@@ -31,6 +32,7 @@ class CategoriaController extends Controller
         $categoria->descripcion = $request->descripcion;
         $categoria->estado = '1';
         $categoria->save();
+        flash::success('La categoria fue registrada con éxito');
         return redirect ('/categorias');
     }
     public function show(Categoria $categoria)
@@ -47,6 +49,7 @@ class CategoriaController extends Controller
         $categoria->nombre = $request->nombre;
         $categoria->descripcion = $request->descripcion;
         $categoria->update();
+        flash::warning('La categoria fue actualizada con éxito');
         return redirect ('/categorias');
     }
     public function destroy(Categoria $categoria)
@@ -54,6 +57,7 @@ class CategoriaController extends Controller
         
         $categoria->estado = '0';
         $categoria->update();
+        flash::error('La categoria fue eliminada con éxito');
         return redirect('/categorias');
     }
 }

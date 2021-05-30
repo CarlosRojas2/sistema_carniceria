@@ -5,19 +5,19 @@
         <div class="container-fluid">
             <div class="inner-body">
 
-
+                <br>@include('flash::message')
                 <!-- Page Header -->
                 <div class="page-header">
                     <div>
                         <h1 class="main-content-title tx-24 mg-b-5">LISTADO DE PROVEEDORES</h1><br>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Inicio</a></li>
                             <li class="breadcrumb-item active" aria-current="page">proveedores</li>
                         </ol>
                     </div>
                     <div class="d-flex">
                         <div class="justify-content-center">
-                            <a type="button" href='/proveedors/create' data-toggle="tooltip" title="Agregar proveedor" data-placement="bottom"
+                            <a type="button" href="{{route('proveedors.create')}}" data-toggle="tooltip" title="Agregar proveedor" data-placement="bottom"
                         class="mb-2 mr-2 btn-hover-shine btn btn-primary">
                             <i class="fe fe-download-cloud mr-2"></i> Nuevo proveedor
                         </a>
@@ -59,7 +59,7 @@
                                                     <td>{{$prov->numero_ruc}}</td>
                                                     <td>{{$prov->telefono}}</td>
                                                     <td>
-                                                        <a href="/proveedors/{{ $prov['id'] }}/edit" class="btn-outline-warning"><i class="fa fa-edit"></i></a>
+                                                        <a href="{{route('proveedors.edit', $prov->id)}}" class="btn-outline-warning"><i class="fa fa-edit"></i></a>
                                                         <a href="#" class="btn-outline-danger" data-toggle="modal" data-target="#deleteModal" data-proveedorid="{{$prov['id']}}"><i class="fas fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>

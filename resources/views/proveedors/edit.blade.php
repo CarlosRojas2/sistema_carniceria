@@ -11,7 +11,7 @@
                     <div>
                         <h1 class="main-content-title tx-24 mg-b-5">EDITAR CATEGORÍA {{$proveedor->id}}</h1><br>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Inicio</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Categorias</li>
                         </ol>
                     </div>
@@ -27,7 +27,7 @@
                 @endif      
                 <div class="main-card mb-3 card">
                     <div class="card-body">
-                        <form class="col-md-10 mx-auto" method="POST" action="/proveedors/{{ $proveedor->id }}" enctype="multipart/form-data">
+                        <form class="col-md-10 mx-auto" method="POST" action="{{route('proveedors.update', $proveedor)}}" enctype="multipart/form-data">
                             @method('PATCH')
                             @csrf()
                             <div class="row">

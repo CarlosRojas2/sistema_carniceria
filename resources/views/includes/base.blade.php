@@ -72,6 +72,7 @@
 			@include('includes.dashboard.headermobile')
 			<!-- Mobile-header closed -->
 			<!-- Main Content-->
+			
             @yield('content')
 			<!-- End Main Content-->
 			@yield('modal')

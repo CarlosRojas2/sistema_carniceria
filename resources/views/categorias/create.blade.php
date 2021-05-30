@@ -5,13 +5,12 @@
         <div class="container-fluid">
             <div class="inner-body">
 
-
                 <!-- Page Header -->
                 <div class="page-header">
                     <div>
                         <h1 class="main-content-title tx-24 mg-b-5">REGISTRAR NUEVA CATEGORÍA</h1><br>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Inicio</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Categorias</li>
                         </ol>
                     </div>
@@ -27,7 +26,7 @@
                 @endif      
                 <div class="main-card mb-3 card">
                     <div class="card-body">
-                        <form class="col-md-10 mx-auto" method="POST" action="/categorias" enctype="multipart/form-data">
+                        <form class="col-md-10 mx-auto" method="POST" action="{{route('categorias.index')}}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -50,7 +49,7 @@
                             
                             <div class="form-group" align="center">
                                 <button type="submit" class="btn btn-success">Registrar</button>
-                                <a type="submit" href="/categorias"  class="btn btn-danger">Cancelar</a>
+                                <a type="submit" href="{{route('categorias.index')}}"  class="btn btn-danger">Cancelar</a>
                             </div>
                         </form>
                     </div>

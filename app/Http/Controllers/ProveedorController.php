@@ -4,6 +4,8 @@ use App\Http\Requests\Proveedor\StoreRequest;
 use App\Http\Requests\Proveedor\UpdateRequest;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
+use Laracasts\Flash\Flash;
+
 class ProveedorController extends Controller
 {
     public function index()
@@ -30,6 +32,7 @@ class ProveedorController extends Controller
         $proveedor->direccion = $request->direccion;
         $proveedor->estado = '1';
         $proveedor->save();
+        flash::success('El proveedor fue registrado con éxito');
         return redirect ('/proveedors');
     }
     public function show(proveedor $proveedor)
@@ -50,12 +53,14 @@ class ProveedorController extends Controller
         $proveedor->telefono = $request->telefono;
         $proveedor->direccion = $request->direccion;
         $proveedor->update();
+        flash::warning('El proveedor fue actualizado con éxito');
         return redirect ('/proveedors');
     }
     public function destroy(proveedor $proveedor)
     {
         $proveedor->estado = '0';
         $proveedor->update();
+        flash::error('El proveedor fue eliminado con éxito');
         return redirect('/proveedors');
     }
 }
