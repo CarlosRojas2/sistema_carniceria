@@ -1,48 +1,90 @@
 @extends('includes/base')
 @section('content')
-<div class="app-main__outer">
-    <div class="app-main__inner">
-        <div class="app-page-title">
-            <div class="page-title-wrapper">
-                <div class="page-title-heading">
-                    <div class="page-title-icon">
-                        <i class="lnr-picture text-danger"></i>
+
+    <div class="main-content side-content pt-0">
+        <div class="container-fluid">
+            <div class="inner-body">
+
+
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div>
+                        <h2 class="main-content-title tx-24 mg-b-5">Sección de materia prima</h2>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Proyecto de prácticas</li>
+                        </ol>
                     </div>
-                    <div>Nuevo Materia Prima
-                        <div class="page-title-subheading">Agregar nueva materia prima.</div>
+                    <div class="d-flex">
+                        <div class="justify-content-center text-white">
+                            <a type="button" href="{{route('materias.index')}}" class="btn btn-primary my-2 btn-icon-text">
+                            <i class="fe fe-eye mr-2"></i> Ver Materias
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="page-title-actions">
-                    <a type="button" href="{{route('materias.index')}}" data-toggle="tooltip" title="ver materias" data-placement="bottom"
-                        class="mb-2 mr-2 btn-hover-shine btn btn-success">Ver materias primas 
-                        <i class="fa fa-plus-square"></i>
-                    </a>
-                </div>     
-            </div>
-        </div>        
-        <div class="tab-content">
-            <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                <div class="main-card mb-3 card">
-                    <div class="card-body">
-                        <form id="materias" class="col-md-10 mx-auto" method="POST" action="{{route('materias.store')}}">
-                            @csrf
-                            @include('materias/_form')
-                            
-                            <div class="form-group" align="center">
-                                <button type="submit" class="mb-2 mr-2 btn-hover-shine btn btn-alternate" value="registrar">Registrar</button>
-                                <a type="submit" href="{{route('materias.index')}}"  class="mb-2 mr-2 btn-hover-shine btn btn-light" name="cancelar" value="Cancelar">Cancelar</a>
+                <!-- End Page Header -->
+
+                <!--Row-->
+                <div class="row row-sm">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div>
+                                    <h6 class="main-content-label mb-1">Registro de materia prima</h6>
+                                    <p class="text-muted card-sub-title">Registrar nueva materia prima.</p>
+                                </div>
+                                <form id="materias" method="POST" action="{{route('materias.store')}}">
+                                    @csrf
+                                    
+                                    <div class="row row-sm mg-t-20">
+                                        <div class="col-lg">
+                                            <p class="mg-b-10">Producto*</p>
+                                            <div class="form-group">
+                                                <select name="producto_id" id="producto_id" class="form-control select-lg select2">
+                                                    <option value="">Large Select</option>
+                                                    @foreach ($productos as $item)
+                                                    <option value="{{$item->id}}">{{$item->nombre}} - {{$item->stock}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg">
+                                            <p class="mg-b-10">Cantidad kg*</p>
+                                            <input id="cantidad" name="cantidad" class="form-control" placeholder="Kg" type="number" onkeyup="calculoimporte()">
+                                        </div>
+
+                                        <div class="col-lg">
+                                            <p class="mg-b-10">Precio compra*</p>
+                                            <input id="precio_compra" name="precio_compra" class="form-control" placeholder="S/" type="number" onkeyup="calculoimporte()">
+                                        </div>
+
+                                        <div class="col-lg">
+                                            <p class="mg-b-10">Importe total*</p>
+                                            <input type="hidden" id="importe" name="importe">
+                                            <input id="importever" name="importever" class="form-control" placeholder="S/" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row justify-content-end mb-0" align="center">
+                                        <div class="col-md-12 pl-md-6 text-white">
+                                            <button type="submit" class="btn ripple btn-primary pd-x-30 mg-r-10" value="registrar">Registrar</button>
+                                            <a type="button" href="{{route('materias.index')}}" class="btn ripple btn-secondary pd-x-30">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
+                <!-- Row end -->
             </div>
         </div>
     </div>
 @endsection
-
 @section('scripts')
 
-<script type="text/javascript" src="{{asset('js/materias.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/js/misjs/materias.js')}}"></script>
 
     
 @endsection

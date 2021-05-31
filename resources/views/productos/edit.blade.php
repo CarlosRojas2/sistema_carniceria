@@ -31,8 +31,8 @@
                         <div class="card custom-card">
                             <div class="card-body">
                                 <div>
-                                    <h6 class="main-content-label mb-1">Registros de productos</h6>
-                                    <p class="text-muted card-sub-title">Registrar nuevo producto.</p>
+                                    <h6 class="main-content-label mb-1">Formulario de productos</h6>
+                                    <p class="text-muted card-sub-title">Editar producto.</p>
                                 </div>
                                 <form id="productos" method="POST" action="{{route('productos.update', $producto)}}">
                                     @csrf

@@ -9,10 +9,10 @@
                 <!-- Page Header -->
                 <div class="page-header">
                     <div>
-                        <h2 class="main-content-title tx-24 mg-b-5">Bienvenido al Dashboard</h2>
+                        <h2 class="main-content-title tx-24 mg-b-5">Sección de productos</h2>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Proyecto de prácticas</li>
+                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Productos</li>
                         </ol>
                     </div>
                     <div class="d-flex">
@@ -64,9 +64,9 @@
                                                                 @method('delete')
 
                                                                 <a href="#" class="btn btn-sm btn-primary">
-                                                                    <i class="fe fe-search"></i>
+                                                                    <i class="fe fe-eye"></i>
                                                                 </a>
-                                                                <a href="{{route('productos.edit', $item->id)}}" class="btn btn-sm btn-info">
+                                                                <a href="{{route('productos.edit', $item->id)}}" class="btn btn-sm btn-success">
                                                                     <i class="fe fe-edit-2"></i>
                                                                 </a>
 
