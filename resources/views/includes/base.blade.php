@@ -13,7 +13,7 @@
 
 		<!-- Title -->
 		<title>{{config('app.name', 'laravel')}}</title>
-
+		
 		<!-- Bootstrap css-->
 		<link href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
 
@@ -33,13 +33,12 @@
 
 		<!-- Select2 css-->
         <link href="{{asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
-
+		
 		<!-- Internal DataTables css-->
 		<link href="{{asset('assets/plugins/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
 		<link href="{{asset('assets/plugins/datatable/responsivebootstrap4.min.css')}}" rel="stylesheet" />
 		<link href="{{asset('assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css')}}" rel="stylesheet" />
-		
-		<!-- Mutipleselect css-->
+				<!-- Mutipleselect css-->
 		<link rel="stylesheet" href="{{asset('assets/plugins/multipleselect/multiple-select.css')}}">
 		
 		<!-- Sidemenu css-->
@@ -48,10 +47,6 @@
 		<!-- Switcher css-->
 		<link href="{{asset('assets/switcher/css/switcher.css')}}" rel="stylesheet">
 		<link href="{{asset('assets/switcher/demo.css')}}" rel="stylesheet">
-
-		<!-- Internal Sweet-Alert css-->
-		{{-- <link href="{{asset('assets/plugins/sweet-alert/sweetalert.css')}}" rel="stylesheet"> --}}
-
 	</head>
 
 	<body class="main-body leftmenu light-horizontal light-theme light-leftmenu color-header">
@@ -77,8 +72,10 @@
 			@include('includes.dashboard.headermobile')
 			<!-- Mobile-header closed -->
 			<!-- Main Content-->
+			
             @yield('content')
 			<!-- End Main Content-->
+			@yield('modal')
 
 		<!-- Main Footer-->
             @include('includes.dashboard.footer')
@@ -107,9 +104,19 @@
 
 		<!-- Sidebar js -->
 		<script src="{{asset('assets/plugins/sidebar/sidebar.js')}}"></script>
+		
+		        <!-- Internal Chart.Bundle js-->
+		<script src="{{asset('assets/plugins/chart.js/Chart.bundle.min.js')}}"></script>
 
-		<!-- Internal Select2 js-->
-        <script src="{{asset('assets/js/select2.js')}}"></script>
+		<!-- Peity js-->
+        <script src="{{asset('assets/plugins/peity/jquery.peity.min.js')}}"></script>
+
+		<!-- Internal Morris js -->
+		<script src="{{asset('assets/plugins/raphael/raphael.min.js')}}"></script>
+		<script src="{{asset('assets/plugins/morris.js/morris.min.js')}}"></script>
+
+		<!-- Circle Progress js-->
+		<script src="{{asset('assets/js/circle-progress.min.js')}}"></script>
 
 		<!-- Internal Data Table js -->
 		<script src="{{asset('assets/plugins/datatable/jquery.dataTables.min.js')}}"></script>
@@ -126,38 +133,13 @@
 		<script src="{{asset('assets/js/table-data.js')}}"></script>
 		
 		
-
-		<!-- Peity js-->
-        <script src="{{asset('assets/plugins/peity/jquery.peity.min.js')}}"></script>
-
-		<!-- Internal Morris js -->
-		<script src="{{asset('assets/plugins/raphael/raphael.min.js')}}"></script>
-		<script src="{{asset('assets/plugins/morris.js/morris.min.js')}}"></script>
-
-		<!-- Circle Progress js-->
-		<script src="{{asset('assets/js/circle-progress.min.js')}}"></script>
-
-		<!-- Internal Dashboard js-->
-        {{-- <script src="{{asset('assets/js/index.js')}}"></script> --}}
-
-		<!-- Internal Ion-rangeslider js-->
-        <script src="{{asset('assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
-
-		<!-- Internal Form-elements js-->
-		{{-- <script src="{{asset('assets/js/form-elements.js')}}"></script> --}}
-		
 		<!-- Sticky js -->
 		<script src="{{asset('assets/js/sticky.js')}}"></script>
 
 		<!-- Custom js -->
 		<script src="{{asset('assets/js/custom.js')}}"></script>
 
-		<!-- Internal Sweet-Alert js-->
-		{{-- <script src="{{asset('assets/plugins/sweet-alert/sweetalert.min.js')}}"></script>
-		<script src="{{asset('assets/plugins/sweet-alert/jquery.sweet-alert.js')}}"></script> --}}
-
 		<!-- Switcher js -->
 		<script src="{{asset('assets/switcher/js/switcher.js')}}"></script>
-		@yield('scripts')
 	</body>
 </html>

@@ -9,32 +9,32 @@
 		<meta name="keywords" content="admin laravel template, template laravel admin, laravel css template, best admin template for laravel, laravel blade admin template, template admin laravel, laravel admin template bootstrap 4, laravel bootstrap 4 admin template, laravel admin bootstrap 4, admin template bootstrap 4 laravel, bootstrap 4 laravel admin template, bootstrap 4 admin template laravel, laravel bootstrap 4 template, bootstrap blade template, laravel bootstrap admin template">
 
 		<!-- Favicon -->
-		<link rel="icon" href="{{asset('assets/img/brand/favicon.ico')}}" type="image/x-icon"/>
+		<link rel="icon" href="assets/img/brand/favicon.ico" type="image/x-icon"/>
 
 		<!-- Title -->
 		<title>Login Pocoyo</title>
 
 		<!-- Bootstrap css-->
-		<link href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 
 		<!-- Icons css-->
-		<link href="{{asset('assets/plugins/web-fonts/icons.css')}}" rel="stylesheet"/>
-		<link href="{{asset('assets/plugins/web-fonts/font-awesome/font-awesome.min.css')}}" rel="stylesheet">
-		<link href="{{asset('assets/plugins/web-fonts/plugin.css')}}" rel="stylesheet"/>
+		<link href="assets/plugins/web-fonts/icons.css" rel="stylesheet"/>
+		<link href="assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+		<link href="assets/plugins/web-fonts/plugin.css" rel="stylesheet"/>
 
 		<!-- Style css-->
-		<link href="{{asset('assets/css/style/style.css')}}" rel="stylesheet">
-		<link href="{{asset('assets/css/skins.css')}}" rel="stylesheet">
-		<link href="{{asset('assets/css/dark-style.css')}}" rel="stylesheet">
-		<link href="{{asset('assets/css/colors/default.css')}}" rel="stylesheet">
+		<link href="assets/css/style/style.css" rel="stylesheet">
+		<link href="assets/css/skins.css" rel="stylesheet">
+		<link href="assets/css/dark-style.css" rel="stylesheet">
+		<link href="assets/css/colors/default.css" rel="stylesheet">
 
 		
 		<!-- Color css-->
-		<link id="theme" rel="stylesheet" type="text.css')}}" media="all" href="{{asset('assets/css/colors/color.css')}}">
+		<link id="theme" rel="stylesheet" type="text/css" media="all" href="assets/css/colors/color.css">
 
 		<!-- Switcher css-->
-		<link href="{{asset('assets/switcher/css/switcher.css')}}" rel="stylesheet">
-		<link href="{{asset('assets/switcher/demo.css')}}" rel="stylesheet">
+		<link href="assets/switcher/css/switcher.css" rel="stylesheet">
+		<link href="assets/switcher/demo.css" rel="stylesheet">
 	</head>
 
 	<body class="main-body leftmenu">
@@ -66,11 +66,11 @@
 							<div class="swichermainleft">
 								<h4 class="font-bold text-sm mr-3">Default Theme Switcher</h4>
 								<div class="swichermainleft my-4">
-									<a class="wscolorcode red-btn color blackborder color1" href="#" data-theme="assets/css/colors/color1.css')}}"></a>
-									<a class="wscolorcode purple-btn color blackborder color2" href="#" data-theme="assets/css/colors/color2.css')}}"></a>
-									<a class="wscolorcode green-btn color blackborder color3" href="#" data-theme="assets/css/colors/color3.css')}}"></a>
-									<a class="wscolorcode pink-btn color blackborder color4" href="#" data-theme="assets/css/colors/color4.css')}}"></a>
-									<a class="wscolorcode orange-btn color blackborder color5" href="#" data-theme="assets/css/colors/color5.css')}}"></a>
+									<a class="wscolorcode red-btn color blackborder color1" href="#" data-theme="assets/css/colors/color1.css"></a>
+									<a class="wscolorcode purple-btn color blackborder color2" href="#" data-theme="assets/css/colors/color2.css"></a>
+									<a class="wscolorcode green-btn color blackborder color3" href="#" data-theme="assets/css/colors/color3.css"></a>
+									<a class="wscolorcode pink-btn color blackborder color4" href="#" data-theme="assets/css/colors/color4.css"></a>
+									<a class="wscolorcode orange-btn color blackborder color5" href="#" data-theme="assets/css/colors/color5.css"></a>
 								</div>
 							</div>
 							<div class="swichermainleft">
@@ -142,7 +142,7 @@
 
 		<!-- Loader -->
 		<div id="global-loader">
-			<img src="{{asset('assets/img/loader.svg')}}" class="loader-img" alt="Loader">
+			<img src="assets/img/loader.svg" class="loader-img" alt="Loader">
 		</div>
         <!-- End Loader -->
 
@@ -157,9 +157,9 @@
 						<div class="row row-sm">
 							<div class="col-lg-6 col-xl-5 d-none d-lg-block text-center bg-primary details">
 								<div class="mt-5 pt-4 p-2 pos-absolute">
-									<img src="{{asset('assets/img/brand/logo-light.png')}}" class="header-brand-img mb-4" alt="logo">
+									<img src="assets/img/brand/logo-light.png" class="header-brand-img mb-4" alt="logo">
 									<div class="clearfix"></div>
-									<img src="{{asset('assets/img/svgs/user.svg')}}" class="ht-100 mb-0" alt="user">
+									<img src="assets/img/svgs/user.svg" class="ht-100 mb-0" alt="user">
 									<h5 class="mt-4 text-white">Accede a tu cuenta</h5>
 									<span class="tx-white-6 tx-13 mb-5 mt-xl-0">Inicie sesión para crear, descubrir y conectarse con la comunidad global</span>
 								</div>
@@ -168,13 +168,8 @@
 								<div class="container-fluid">
 									<div class="row row-sm">
 										<div class="card-body mt-2 mb-2">
-											<img src="{{asset('assets/img/brand/logo.png')}}" class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo">
+											<img src="assets/img/brand/logo.png" class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo">
 											<div class="clearfix"></div>
-											<!-- Session Status -->
-											<x-auth-session-status class="mb-4" :status="session('status')" />
-
-											<!-- Validation Errors -->
-											<x-auth-validation-errors class="mb-4" :errors="$errors" />
 											<form method="POST" action="{{ route('login') }}">
                                                 @csrf
 												<h5 class="text-left mb-2">Iniciar sesión en su cuenta</h5>
@@ -207,20 +202,24 @@
 		<!-- End Page -->
 
 		<!-- Jquery js-->
-		<script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
+		<script src="assets/plugins/jquery/jquery.min.js"></script>
 
 		<!-- Bootstrap js-->
-		<script src="{{asset('assets/plugins/bootstrap/js/popper.min.js')}}"></script>
-		<script src="{{asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+		<script src="assets/plugins/bootstrap/js/popper.min.js"></script>
+		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Select2 js-->
-		<script src="{{asset('assets/plugins/select2/js/select2.min.js')}}"></script>
+		<script src="assets/plugins/select2/js/select2.min.js"></script>
 
 		
 		<!-- Custom js -->
-		<script src="{{asset('assets/js/custom.js')}}"></script>
+		<script src="assets/js/custom.js"></script>
 
 		<!-- Switcher js -->
-		<script src="{{asset('assets/switcher/js/switcher.js')}}"></script>
+		<script src="assets/switcher/js/switcher.js"></script>
+		
+
+		
+
 	</body>
 </html>
