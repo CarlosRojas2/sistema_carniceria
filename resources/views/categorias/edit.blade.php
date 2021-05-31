@@ -4,8 +4,6 @@
 <div class="main-content side-content pt-0">
         <div class="container-fluid">
             <div class="inner-body">
-
-                <br>@include('flash::message')
                 <!-- Page Header -->
                 <div class="page-header">
                     <div>

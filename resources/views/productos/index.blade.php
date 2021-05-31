@@ -34,7 +34,6 @@
                                     <h6 class="main-content-label mb-1">Registros de productos</h6>
                                     <p class="text-muted card-sub-title">Registrar nuevo producto.</p>
                                 </div>
-<<<<<<< HEAD
                                 <div class="table-responsive">
                                     <table id="exportexample" class="table table-bordered border-t0 key-buttons text-nowrap w-100" >
                                         <thead>
@@ -84,7 +83,6 @@
                                             @endif
                                         </tbody>
                                     </table>
-=======
                                 <div class="row row-sm">
                                     <div class="col-lg">
                                         <input class="form-control" placeholder="Input box" type="text">
@@ -106,7 +104,6 @@
                                     <div class="col-lg mg-t-10 mg-lg-t-0">
                                         <textarea class="form-control" disabled placeholder="Texarea (disabled)" rows="3"></textarea>
                                     </div>
->>>>>>> abc9d99d6b4eaf36da5e71322b1ff02dead1639a
                                 </div>
                             </div>
                         </div>
